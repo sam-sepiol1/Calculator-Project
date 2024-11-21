@@ -19,6 +19,7 @@
     &--current { 
         margin-right: 1rem;
         font-size: 2rem;
+        color: white;
     }
 }
 
@@ -30,6 +31,7 @@
     outline: none;
     color: white;
     background-color: hsl(0, 0, 30%);
+    font-size: 3rem;
 
     &:hover { 
         background-color: hsl(0, 0, 40%);

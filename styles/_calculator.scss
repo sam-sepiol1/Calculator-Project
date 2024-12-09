@@ -1,20 +1,37 @@
+@mixin respond-to($breakpoint) {
+    @if $breakpoint == small {
+        @media (max-width: 600px) {
+            @content;
+        }
+    } @else if $breakpoint == medium {
+        @media (min-width: 601px) and (max-width: 900px) {
+            @content;
+        }
+    } @else if $breakpoint == large {
+        @media (min-width: 901px) {
+            @content;
+        }
+    }
+}
+
 .calculator { 
     display: grid;
     margin: auto;
     justify-content: center;
     background-color: hsl(0, 0, 15%);
     padding: 3rem;
-
-
+    width: 50%;
 }
 
 .calculator__display { 
     margin: 1rem 0;
+    height: 8rem;
+    max-width: 100%;
     display: flex;
-    height: 100px;
     align-items: end;
     justify-content: end;
     background-color: hsl(0, 0, 20%);
+    overflow: hidden;
     
     &--current { 
         margin-right: 1rem;
@@ -24,15 +41,17 @@
 }
 
 .button { 
-    height: 100px;
-    width: 100px;
-    border-radius: 50px;
+    padding: 1rem;
+    min-width: 50px;
+    min-height: 50px;
+    border-radius: 50%;
     border: none;
     outline: none;
     color: white;
     background-color: hsl(0, 0, 30%);
-    font-size: 3rem;
+    text-align: center;
 
+    font-weight: bolder;
     &:hover { 
         background-color: hsl(0, 0, 40%);
     }
@@ -56,6 +75,29 @@
 .calculator__keys { 
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
     gap: 1rem;
 }
 
+@include respond-to(small) { 
+    .calculator {
+        width: 25%;
+    }
+    .button { 
+        font-size: 1.5rem;
+    }
+}
+@include respond-to(medium) { 
+
+    .button { 
+        font-size: 2rem;
+    }
+}
+@include respond-to(large) { 
+    .calculator {
+        width: 50%;
+    }
+    .button { 
+        font-size: 2.5rem;
+    }
+}

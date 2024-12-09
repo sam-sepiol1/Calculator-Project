@@ -21,7 +21,7 @@
   align-items: end;
   justify-content: end;
   background-color: hsl(0, 0%, 20%);
-  overflow: hidden;
+  overflow: scroll;
 }
 .calculator__display--current {
   margin-right: 1rem;

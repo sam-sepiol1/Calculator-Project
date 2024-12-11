@@ -18,7 +18,7 @@ This project is a simple calculator application built using HTML, CSS, and JavaS
 
 Go to 
 
-> https://sam-sepiol1.github.io/Calculator-project/
+> https://sam-sepiol1.github.io/Calculator-Project/
 
 to see it live
 
